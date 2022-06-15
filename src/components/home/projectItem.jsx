@@ -21,18 +21,21 @@ export default function ProjectItems ({ projects, handleDelete, handleSearch }) 
   const navigate = useNavigate()
   return (
     <>
+      <FormControl
+        marginBottom={5}
+      >
+        <Input
+          bg='gray.300'
+          type='search'
+          placeholder='Search project'
+          onChange={(e) => handleSearch(e)}
+        />
+      </FormControl>
+
       <VStack
         bg='white'
         width='full'
       >
-        <FormControl>
-          <Input
-            bg='gray.300'
-            type='search'
-            placeholder='Search project'
-            onChange={(e) => handleSearch(e)}
-          />
-        </FormControl>
         {projects.length > 0
           ? projects.map((project, index) => (
             <HStack
